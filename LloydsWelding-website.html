@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+  LLOYD'S WELDING LTD. WEBSITE (single file, no dependencies)
+  Owner notes:
+  - Phone, email, directions and review links are plain links, so they work in any browser.
+  - To point the review button at your exact Google review page, replace the href of the link with id="review" (it currently opens the Google Maps listing search).
+    (Google Business Profile > "Get more reviews" gives you the direct link.)
+  - Upload this file as index.html to any web host to put the site online.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lloyd's Welding Ltd. | Welding &amp; Fabrication in Chilliwack, BC</title>
+<meta name="description" content="Design, welding, fabrication and installation in steel, stainless and aluminum. Shop and mobile. Chilliwack, BC. Call 604 392 WELD.">
+<style>
+:root{--bg:#0b0b0d;--bg2:#131317;--ink:#f4f1ec;--mute:#a09b93;--line:#26262c;--card:#111115;--hot:#ff6a1a;--hot2:#ffb347;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f3ee;--bg2:#ece7df;--ink:#17161a;--mute:#5f5a52;--line:#d8d1c6;--card:#fffdf9}}
+:root[data-theme="dark"]{--bg:#0b0b0d}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:"Oswald","Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;margin:0;font-weight:700}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+#bar{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--hot),var(--hot2));box-shadow:0 0 12px var(--hot)}
+.brand{font-size:20px;letter-spacing:.08em}
+.brand b{color:var(--hot)}
+.links{display:flex;gap:6px;align-items:center;font-size:14px}
+.links a{padding:8px 13px;border-radius:999px;color:var(--mute);transition:.2s}
+.links a:hover,.links a.act{color:var(--ink);background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid var(--line);transition:.25s;cursor:pointer;background:none;color:var(--ink);font-family:inherit}
+.btn.hot{background:linear-gradient(120deg,var(--hot),var(--hot2));color:#1a0d00;border:0}
+.btn.hot:hover{box-shadow:0 0 36px 4px rgba(255,106,26,.5);transform:translateY(-2px)}
+.btn:not(.hot):hover{border-color:var(--hot);color:var(--hot)}
+.links .btn{padding:9px 18px;color:#1a0d00}
+@media(max-width:760px){.links a:not(.btn){display:none}}
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(55% 50% at 80% 95%,rgba(255,106,26,.38),transparent 70%),radial-gradient(35% 35% at 8% 0,rgba(255,179,71,.09),transparent)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tag:before{content:"";width:34px;height:2px;background:var(--hot);box-shadow:0 0 10px var(--hot)}
+.hero h1{font-size:clamp(54px,11.5vw,136px);margin:22px 0 20px}
+.grad{background:linear-gradient(100deg,var(--hot),var(--hot2) 50%,#fff1d0 75%,var(--hot));background-size:220% 100%;animation:sweep 6s linear infinite;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,106,26,.4))}
+@keyframes sweep{to{background-position:-220% 0}}
+.hero p{max-width:540px;color:var(--mute);font-size:18px;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.scroll{position:absolute;left:50%;bottom:22px;width:22px;height:36px;border:2px solid var(--line);border-radius:12px;transform:translateX(-50%)}
+.scroll:after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--hot);animation:dn 1.6s infinite}
+@keyframes dn{60%{transform:translateY(12px);opacity:0}}
+.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:15px 0}
+.marq div{display:flex;gap:40px;width:max-content;animation:slide 28s linear infinite;font-size:24px;letter-spacing:.1em;color:var(--mute)}
+.marq b{color:var(--hot);font-weight:400}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:100px 0}
+.num{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--hot);font-weight:700;margin-bottom:12px}
+h2{font-size:clamp(36px,6vw,64px);margin-bottom:14px}
+.lead{color:var(--mute);max-width:620px;margin:0 0 42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;overflow:hidden;transition:transform .3s,border-color .3s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0),rgba(255,106,26,.2),transparent 70%);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--hot)}
+.card:hover:before{opacity:1}
+.card>*{position:relative}
+.card svg{width:36px;height:36px;stroke:var(--hot);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.card ul{margin:10px 0 0;padding:0;list-style:none;color:var(--mute);font-size:14px}
+.card li{padding:3px 0}
+.card li:before{content:"›";color:var(--hot);margin-right:8px;font-weight:700}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+.mats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.mat{height:120px;border-radius:18px;display:flex;align-items:flex-end;padding:16px;font-size:30px;position:relative;overflow:hidden;color:#fff;border:1px solid var(--line);text-shadow:0 2px 10px rgba(0,0,0,.5);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px),var(--g)}
+.mat:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);transition:transform .8s}
+.mat:hover:after{transform:translateX(120%)}
+@media(max-width:600px){.mats{grid-template-columns:1fr}.mat{height:84px}}
+.seg{display:inline-flex;padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--card);margin-bottom:22px}
+.seg button{border:0;background:none;color:var(--mute);padding:11px 30px;border-radius:999px;font:700 15px inherit;font-family:inherit;cursor:pointer;transition:.25s}
+.seg button[aria-selected="true"]{background:linear-gradient(120deg,var(--hot),var(--hot2));color:#1a0d00}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;min-height:150px}
+.panel h3{font-size:28px;margin-bottom:8px}
+.panel p{margin:0;color:var(--mute);max-width:640px}
+.story{background:var(--bg2);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}section{padding:72px 0}}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:14px;transition:.25s}
+.chips span:hover{border-color:var(--hot);color:var(--hot);transform:translateY(-2px)}
+blockquote{margin:0;font-family:"Oswald","Arial Narrow",sans-serif;text-transform:uppercase;font-size:clamp(28px,4.6vw,48px);line-height:1.1;font-weight:700}
+blockquote em{font-style:normal;color:var(--hot)}
+small.src{display:block;margin-top:16px;color:var(--mute);font-size:14px}
+.call{display:block;text-align:center;padding:54px 20px;border:1px solid var(--line);border-radius:26px;background:var(--card);margin-bottom:16px;transition:.3s;position:relative;overflow:hidden}
+.call:hover{border-color:var(--hot);box-shadow:0 0 60px -10px rgba(255,106,26,.5)}
+.call span{display:block;color:var(--mute);font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.call strong{font-family:"Oswald","Arial Narrow",sans-serif;font-size:clamp(46px,10vw,104px);line-height:1;letter-spacing:.03em}
+.call:hover strong{color:var(--hot)}
+.call em{display:block;margin-top:10px;font-style:normal;color:var(--mute)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.box{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.box b{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);margin-bottom:6px}
+.box a:hover{color:var(--hot)}
+.box .btn{margin-top:12px;padding:9px 16px;font-size:13px}
+.rev{margin-top:14px;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:26px 28px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.rev h3{font-size:26px;margin-bottom:4px}
+.rev p{margin:0;color:var(--mute);font-size:15px}
+.stars{font-size:22px;letter-spacing:4px;background:linear-gradient(90deg,var(--hot),var(--hot2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px}
+.official{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--mute);font-size:14px}
+.official a{padding:8px 15px;border:1px solid var(--line);border-radius:999px;transition:.2s}
+.official a:hover{border-color:var(--hot);color:var(--hot)}
+footer{padding:32px 0 96px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.dock{display:none}
+@media(max-width:760px){.dock{display:flex;position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:40;gap:8px;padding:8px;border-radius:999px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line)}.dock .btn{flex:1;padding:12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand disp" href="#top">Lloyd's<b> Welding</b></a>
+  <div class="links"><a href="#services">Services</a><a href="#how">How we work</a><a href="#crew">Crew</a><a href="#contact">Contact</a><a class="btn hot" href="tel:+16043929353">Call now</a></div>
+</div><div id="bar"></div></nav>
+
+<header class="hero" id="top">
+  <canvas id="fx"></canvas>
+  <div class="wrap">
+    <span class="tag">Chilliwack, BC · Lloyd's Welding Ltd.</span>
+    <h1>Big or small,<br><span class="grad">we do it all.</span></h1>
+    <p>Design, welding, fabrication and installation in steel, stainless and aluminum. In our shop, or mobile at your site.</p>
+    <div class="cta"><a class="btn hot" href="tel:+16043929353">Call 604 392 WELD</a><a class="btn" href="#services">See services</a></div>
+  </div>
+  <i class="scroll"></i>
+</header>
+
+<div class="marq" aria-hidden="true"><div class="disp">
+  <span>Design</span><b>✦</b><span>Welding</span><b>✦</b><span>Fabrication</span><b>✦</b><span>Installation</span><b>✦</b><span>Mobile Heavy Vehicle Service</span><b>✦</b>
+  <span>Design</span><b>✦</b><span>Welding</span><b>✦</b><span>Fabrication</span><b>✦</b><span>Installation</span><b>✦</b><span>Mobile Heavy Vehicle Service</span><b>✦</b>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="num reveal">01 · Services</div>
+  <h2 class="reveal">Built to hold.</h2>
+  <p class="lead reveal">Fabrication, repair and design under one roof, from a single job to fleet maintenance.</p>
+  <div class="grid">
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg><h3>Custom Fabrication</h3><p>Custom fabrication in-shop or as mobile work at your site, with the option for on-site installation.</p></article>
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M12 3c3 3 6 4 6 8s-3 5-6 10c-3-5-6-6-6-10s3-5 6-8z"/></svg><h3>Ornamental &amp; Architectural Ironwork</h3><p>Ornamental and architectural ironwork, built in-shop or at your site.</p></article>
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M3 16h13l3-5h2v5M7 16a2 2 0 100 4 2 2 0 000-4zm9 0a2 2 0 100 4 2 2 0 000-4zM3 16V7h10v9"/></svg><h3>Mobile Heavy Vehicle Service</h3><p>Mobile heavy vehicle repairs and service, including oil changes.</p></article>
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M2 17h20M5 17V8h14v9M8 8V5h8v3M7 20h2m6 0h2"/></svg><h3>Commercial Trailer &amp; Fleet</h3><p>Commercial trailer repairs and fleet service.</p><ul><li>Electrical services</li><li>ABS systems</li><li>Extensive flat-rate job list</li><li>Mobile crews</li><li>Repairs above and below rails, interior and exterior</li></ul></article>
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M4 4l7 7M11 11l9 9M14 4h6v6M4 20l5-5"/></svg><h3>CNC Plasma Cutting</h3><p>CNC plasma cutting services are now available.</p></article>
+    <article class="card reveal"><svg viewBox="0 0 24 24"><path d="M3 21l3-1L20 6l-2-2L4 18l-1 3zM14 8l2 2"/></svg><h3>Drafting &amp; Design</h3><p>CAD and manual drafting, from metalwork to as-built drawings for residential and commercial buildings.</p></article>
+  </div>
+</div></section>
+
+<section id="how" class="story"><div class="wrap">
+  <div class="num reveal">02 · How we work</div>
+  <h2 class="reveal">Your metal. Your site.</h2>
+  <p class="lead reveal">We work with steel, stainless and aluminum, in the shop or on the road.</p>
+  <div class="mats reveal">
+    <div class="mat disp" style="--g:linear-gradient(135deg,#4b5058,#8f96a0 45%,#454a52)">Steel</div>
+    <div class="mat disp" style="--g:linear-gradient(135deg,#7d858f,#dfe4ea 45%,#8c939d)">Stainless</div>
+    <div class="mat disp" style="--g:linear-gradient(135deg,#8b98a6,#c9d3dd 45%,#7d8b99)">Aluminum</div>
+  </div>
+  <div class="seg reveal" role="tablist"><button role="tab" aria-selected="true" data-t="0">Shop</button><button role="tab" aria-selected="false" data-t="1">Mobile</button></div>
+  <div class="panel reveal" id="panel"></div>
+</div></section>
+
+<section id="crew"><div class="wrap split">
+  <div class="reveal">
+    <div class="num">03 · Our crew</div>
+    <h2>Journeymen. Apprentices. Ready.</h2>
+    <p class="lead" style="margin-bottom:22px">Our crews are certified journeymen and apprentices. Class 3 and Class 1 licensed drivers are available.</p>
+    <div class="chips"><span>A Welders</span><span>B Welders</span><span>Heavy Duty Mechanic</span><span>Registered Welding Apprentices</span><span>Commercial Trailer Inspectors</span><span>Commercial Trailer Mechanics (inter-provincial)</span><span>Registered Commercial Trailer Apprentices</span><span>CAD &amp; Manual Drafters</span><span>Confined Space Training</span><span>Fall Arrest Training</span><span>OFA Training &amp; Certification</span><span>Design Artists</span></div>
+  </div>
+  <div class="reveal">
+    <blockquote>Broke on a <em>Sunday.</em><br>Fixed <em>same day.</em><br>Back on the road.</blockquote>
+    <small class="src">A broken fuel fitting on an L11 engine, fixed the same day so the trucker had no real downtime. From Lloyd's Welding's own contact page.</small>
+  </div>
+</div></section>
+
+<section id="contact" class="story"><div class="wrap">
+  <div class="num reveal">04 · Contact</div>
+  <h2 class="reveal">Let's get to work.</h2>
+  <a class="call reveal" href="tel:+16043929353"><span>Call Lloyd</span><strong>604 392 WELD</strong><em>(604) 392-9353 · Services available as required, not just nine to five</em></a>
+  <div class="three reveal">
+    <div class="box"><b>Email</b><a href="mailto:lloydkr@lloydswelding.ca?subject=Inquiry%20from%20your%20website">lloydkr@lloydswelding.ca</a><br><button class="btn" id="cp" type="button">Copy email</button></div>
+    <div class="box"><b>Location</b>B-45626 Bernard Ave<br>Chilliwack, BC V2P 1H8<br><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=B-45626+Bernard+Ave+Chilliwack+BC+V2P+1H8">Get directions</a></div>
+    <div class="box"><b>Availability</b>Shop and mobile service, as required. Call to arrange.</div>
+  </div>
+  <div class="rev reveal"><div><div class="stars" aria-hidden="true">★★★★★</div><h3>Worked with Lloyd's Welding?</h3><p>Your feedback helps other people find us. It only takes a minute.</p></div><a id="review" class="btn hot" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lloyd%27s+Welding+B-45626+Bernard+Ave+Chilliwack+BC+V2P+1H8">Leave a Google review</a></div>
+  <div class="official reveal">More from Lloyd's Welding:
+    <a target="_blank" rel="noopener" href="https://lloydswelding.ca/">Official website</a>
+    <a target="_blank" rel="noopener" href="https://lloydswelding.ca/index_files/Page415.htm">Project list</a>
+    <a target="_blank" rel="noopener" href="https://lloydswelding.ca/index_files/Page477.htm">Repair services</a>
+    <a target="_blank" rel="noopener" href="https://lloydswelding.ca/index_files/Page294.htm">CNC plasma cutting</a>
+    <a target="_blank" rel="noopener" href="http://www3.telus.net/public/georgekr">Photo gallery</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© <span id="y"></span> Lloyd's Welding Ltd. · Chilliwack, BC</span><span>Big or small, we do it all</span></div></footer>
+
+<div class="dock"><a class="btn hot" href="tel:+16043929353">Call</a><a class="btn" href="mailto:lloydkr@lloydswelding.ca?subject=Inquiry%20from%20your%20website">Email</a></div>
+
+<script>
+(function(){
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var T=[["In the shop","Custom fabrication, ornamental and architectural ironwork, and CNC plasma cutting, done in-shop by fully trained welding staff."],["At your site","Mobile crews come to you, with multiple units available for bigger jobs and the option of on-site installation. Mobile heavy vehicle service and fleet work too."]];
+  var pn=document.getElementById('panel'),bs=document.querySelectorAll('.seg button');
+  function show(i){pn.innerHTML='<h3></h3><p></p>';pn.firstChild.textContent=T[i][0];pn.lastChild.textContent=T[i][1];bs.forEach(function(b,j){b.setAttribute('aria-selected',i===j)})}
+  bs.forEach(function(b,i){b.addEventListener('click',function(){show(i)})});show(0);
+  var cp=document.getElementById('cp');
+  cp.addEventListener('click',function(){var m='lloydkr@lloydswelding.ca';function ok(){cp.textContent='Copied ✓';setTimeout(function(){cp.textContent='Copy email'},1800)}
+    function fb(){var t=document.createElement('textarea');t.value=m;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy')?ok():prompt('Copy this email:',m)}catch(e){prompt('Copy this email:',m)}document.body.removeChild(t)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(ok,fb)}else{fb()}});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px')})});
+  var bar=document.getElementById('bar');
+  addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100||0)+'%'},{passive:true});
+  var ls=document.querySelectorAll('.links a[href^="#"]'),so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ls.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section').forEach(function(s){so.observe(s)});
+  var cv=document.getElementById('fx'),cx=cv.getContext('2d'),W,H,ps=[];
+  function size(){var r=cv.getBoundingClientRect();W=cv.width=r.width;H=cv.height=r.height}
+  size();addEventListener('resize',size);
+  function emit(x,y,n,sp){for(var i=0;i<n;i++){var a=-Math.PI/2+(Math.random()-.5)*sp,s=2+Math.random()*6;ps.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,d:.008+Math.random()*.02})}}
+  cv.parentNode.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();emit(e.clientX-r.left,e.clientY-r.top,3,Math.PI*1.6)});
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  (function loop(){
+    cx.clearRect(0,0,W,H);emit(W*.8,H*.94,2,.9);cx.globalCompositeOperation='lighter';
+    for(var i=ps.length-1;i>=0;i--){var q=ps[i];q.vy+=.12;q.x+=q.vx;q.y+=q.vy;q.l-=q.d;
+      if(q.l<=0||q.y>H+20){ps.splice(i,1);continue}
+      cx.strokeStyle='rgba(255,'+Math.round(90+q.l*130)+','+Math.round(q.l*50)+','+q.l+')';cx.lineWidth=1+q.l*1.6;cx.beginPath();cx.moveTo(q.x,q.y);cx.lineTo(q.x-q.vx*2,q.y-q.vy*2);cx.stroke()}
+    if(ps.length>900)ps.splice(0,ps.length-900);
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
